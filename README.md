@@ -6,42 +6,42 @@ Berikut adalah desain database yang digunakan dalam sistem ini, dengan minimal 4
 1. Tabel users
 
 Field      Tipe Data	  Keterangan
-id	         INT	     Primary Key, Auto Increment
-username	   VARCHAR	 Nama pengguna (unik)
-email	       VARCHAR	 Email pengguna (unik)
-password	   VARCHAR	 Password pengguna
+id	          INT	     Primary Key, Auto Increment
+username	    VARCHAR	  Nama pengguna (unik)
+email	       VARCHAR	  Email pengguna (unik)
+password	    VARCHAR	  Password pengguna
 role	       ENUM      Peran pengguna (user atau admin)
 
 
 2. Tabel books
 
 Field	           Tipe Data	             Keterangan
-id	                INT	       Primary Key, Auto Increment
-title	              VARCHAR	   Judul buku
-author	            VARCHAR	   Penulis buku
-genre	              VARCHAR	   Genre buku
-year_published	    INT	       Tahun penerbitan
+id	                  INT	       Primary Key, Auto Increment
+title	               VARCHAR	    Judul buku
+author	            VARCHAR	    Penulis buku
+genre	               VARCHAR	    Genre buku
+year_published	      INT	       Tahun penerbitan
 quantity_available	INT	       Jumlah buku yang tersedia
 
 3. Tabel borrowed_books
 
 Field	      Tipe Data	         Keterangan
-id	          INT	        Primary Key, Auto Increment
+id	            INT	        Primary Key, Auto Increment
 user_id	      INT	        Foreign Key (mengacu ke tabel users)
-book_id	      INT 	      Foreign Key (mengacu ke tabel books)
-borrow_date 	DATETIME	  Tanggal peminjaman
-return_date 	DATETIME	  Tanggal pengembalian
-status	      ENUM	      Status peminjaman (borrowed, returned)
+book_id	      INT 	        Foreign Key (mengacu ke tabel books)
+borrow_date 	DATETIME	     Tanggal peminjaman
+return_date 	DATETIME	     Tanggal pengembalian
+status	      ENUM	        Status peminjaman (borrowed, returned)
 
 
 4. Tabel reviews
 
 Field	      Tipe Data	          Keterangan
-id	          INT	        Primary Key, Auto Increment
-user_id	      INT     	  Foreign Key (mengacu ke tabel users)
-book_id	      INT	        Foreign Key (mengacu ke tabel books)
-rating	      INT	        Rating buku antara 1 sampai 5
-comment	      TEXT	      Komentar atau ulasan dari pengguna
+id	           INT	         Primary Key, Auto Increment
+user_id	     INT     	   Foreign Key (mengacu ke tabel users)
+book_id	     INT	         Foreign Key (mengacu ke tabel books)
+rating	     INT	         Rating buku antara 1 sampai 5
+comment	     TEXT	      Komentar atau ulasan dari pengguna
 review_date	  DATETIME   	Tanggal ulasan dibuat
 
 Relasi antar tabel:
